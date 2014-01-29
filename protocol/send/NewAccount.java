@@ -1,20 +1,19 @@
 package floobits.common.protocol.send;
 
+
 import com.intellij.openapi.application.ApplicationInfo;
 import floobits.common.protocol.Base;
 
-import java.io.Serializable;
-
-public class FlooRequestCredentials extends Base {
-    // TODO: Share this code with FlooAuth and NewAccount
-    String name = "request_credentials";
+public class NewAccount extends Base {
+    // TODO: Share this code with FlooAuth
+    String name = "create_user";
     String username = System.getProperty("user.name");
     String client = ApplicationInfo.getInstance().getVersionName();
     public String platform = System.getProperty("os.name");
-    String token;
     public String version = "0.10";
 
-    public FlooRequestCredentials(String token) {
-        this.token = token;
+    public NewAccount() {
+        // Do nothing.
     }
 }
+
